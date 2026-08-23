@@ -1,0 +1,23 @@
+{
+  "name": "@openlobster/filesystem",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Filesystem abstraction with path-containment guards; tools never touch node:fs directly.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit",
+    "lint": "echo 'lint: filesystem package has no lint config'",
+    "test": "echo 'no tests in filesystem package'",
+    "clean": "rm -rf dist .turbo *.tsbuildinfo"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^22.10.1"
+  }
+}

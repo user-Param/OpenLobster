@@ -1,0 +1,28 @@
+{
+  "name": "@openlobster/worker",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Agent Worker (execution plane): consumes the run queue, leases runs, executes the Agent Harness.",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/main.ts",
+    "start": "tsx src/main.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit",
+    "lint": "echo 'lint: worker has no lint config'",
+    "test": "echo 'no tests in worker'",
+    "clean": "rm -rf dist .turbo *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@openlobster/config": "*",
+    "@openlobster/db": "*",
+    "@openlobster/harness": "*",
+    "@openlobster/logger": "*",
+    "@openlobster/redis": "*"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "@types/node": "^22.10.1"
+  }
+}

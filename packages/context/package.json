@@ -1,0 +1,26 @@
+{
+  "name": "@openlobster/context",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Context Manager: assembles model input under a token budget with prompt-injection guards.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit",
+    "lint": "echo 'lint: context package has no lint config'",
+    "test": "echo 'no tests in context package'",
+    "clean": "rm -rf dist .turbo *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@openlobster/types": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^22.10.1"
+  }
+}

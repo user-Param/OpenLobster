@@ -1,0 +1,59 @@
+# OpenLobster local infrastructure.
+# Run with: docker compose up -d
+# Stop with: docker compose down
+#
+# These are the three stateful services the API and Worker need.
+# The API itself (apps/api) and Worker (apps/worker) are not in this file —
+# run them locally with `npm run dev` from the repo root once those slices land.
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: openlobster-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: openlobster
+      POSTGRES_PASSWORD: openlobster
+      POSTGRES_DB: openlobster
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U openlobster -d openlobster"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    container_name: openlobster-redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  chroma:
+    image: chromadb/chroma:0.5.20
+    container_name: openlobster-chroma
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma-data:/chroma/chroma
+    environment:
+      # Local dev only. In production, set a real token and put Chroma behind a proxy.
+      CHROMA_SERVER_AUTHN_PROVIDER: ""
+      IS_PERSISTENT: "TRUE"
+
+volumes:
+  postgres-data:
+  redis-data:
+  chroma-data:

@@ -1,0 +1,33 @@
+{
+  "name": "@openlobster/tools",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Tool definitions, permission policy engine, and ToolManager for OpenLobster.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit",
+    "lint": "echo 'lint: tools package has no lint config'",
+    "test": "vitest run",
+    "clean": "rm -rf dist .turbo *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@openlobster/types": "*",
+    "@openlobster/filesystem": "*",
+    "@openlobster/git": "*",
+    "@openlobster/sandbox": "*",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^22.10.1",
+    "pino": "^9.5.0",
+    "pino-pretty": "^11.3.0",
+    "vitest": "^2.1.8"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "@openlobster/harness",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Agent Harness: run orchestration, agent loop, checkpoints, approvals, leases, workspace locks.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit",
+    "lint": "echo 'lint: harness package has no lint config'",
+    "test": "echo 'no tests in harness package'",
+    "clean": "rm -rf dist .turbo *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@openlobster/config": "*",
+    "@openlobster/db": "*",
+    "@openlobster/redis": "*",
+    "@openlobster/events": "*",
+    "@openlobster/models": "*",
+    "@openlobster/filesystem": "*",
+    "@openlobster/git": "*",
+    "@openlobster/sandbox": "*",
+    "@openlobster/tools": "*",
+    "@openlobster/rag": "*",
+    "@openlobster/types": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^22.10.1",
+    "pino": "^9.5.0"
+  }
+}

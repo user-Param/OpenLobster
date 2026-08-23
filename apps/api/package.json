@@ -1,0 +1,35 @@
+{
+  "name": "@openlobster/api",
+  "version": "0.0.0",
+  "private": true,
+  "description": "OpenLobster REST API (control plane): auth, projects, workspaces, sessions, messages, runs, SSE.",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "start": "tsx src/server.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit",
+    "lint": "echo 'lint: api has no lint config'",
+    "test": "echo 'no tests in api'",
+    "clean": "rm -rf dist .turbo *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@openlobster/auth": "*",
+    "@openlobster/config": "*",
+    "@openlobster/db": "*",
+    "@openlobster/events": "*",
+    "@openlobster/logger": "*",
+    "@openlobster/models": "*",
+    "@openlobster/redis": "*",
+    "@openlobster/types": "*",
+    "@openlobster/validation": "*",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "@types/node": "^22.10.1",
+    "@types/express": "^4.17.21"
+  }
+}

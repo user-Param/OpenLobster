@@ -1,0 +1,26 @@
+{
+  "name": "@openlobster/sandbox",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Sandboxed command execution (Docker driver + dev-only local driver) for OpenLobster.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit",
+    "lint": "echo 'lint: sandbox package has no lint config'",
+    "test": "echo 'no tests in sandbox package'",
+    "clean": "rm -rf dist .turbo *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@openlobster/config": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^22.10.1"
+  }
+}

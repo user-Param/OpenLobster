@@ -1,0 +1,28 @@
+{
+  "name": "@openlobster/models",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Model Gateway: provider registry, auto-routing, retries, fallbacks, usage accounting.",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit",
+    "lint": "echo 'lint: models package has no lint config'",
+    "test": "echo 'no tests in models package'",
+    "clean": "rm -rf dist .turbo *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@openlobster/config": "*",
+    "@openlobster/types": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^22.10.1",
+    "pino": "^9.5.0"
+  }
+}
